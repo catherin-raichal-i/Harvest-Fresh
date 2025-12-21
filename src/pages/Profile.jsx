@@ -90,16 +90,6 @@ const Profile = () => {
                             <div className="space-y-6">
                                 <h3 className="text-sm font-bold text-stone-400 uppercase tracking-widest border-b border-stone-50 pb-2">Preferences</h3>
                                 <div className="space-y-4">
-                                    <div className="p-4 bg-stone-50 rounded-lg">
-                                        <p className="text-sm font-medium text-stone-900 mb-1">Email Notifications</p>
-                                        <p className="text-xs text-stone-500">Receive weekly harvest alerts and seasonal discounts.</p>
-                                        <div className="mt-3 flex items-center gap-2">
-                                            <div className="w-10 h-5 bg-emerald-600 rounded-full relative">
-                                                <div className="absolute right-1 top-1 w-3 h-3 bg-white rounded-full"></div>
-                                            </div>
-                                            <span className="text-xs font-medium text-emerald-800">Enabled</span>
-                                        </div>
-                                    </div>
                                     <div className="p-4 border border-stone-100 rounded-lg">
                                         <p className="text-sm font-medium text-stone-900 mb-1">Sustainable Delivery</p>
                                         <p className="text-xs text-stone-500">Prioritize grouped deliveries to reduce carbon footprint.</p>
@@ -115,3 +105,4 @@ const Profile = () => {
 };
 
 export default Profile;
+
