@@ -61,99 +61,112 @@ const Navbar = () => {
                         ))}
                     </div>
 
-                    {/* Icons */}
-                    {/* Icons */}
-                    <div className="hidden lg:flex items-center space-x-6">
-                        <div className="relative flex items-center">
-                            <AnimatePresence>
-                                {isSearchOpen && (
-                                    <motion.div
-                                        initial={{ width: 0, opacity: 0 }}
-                                        animate={{ width: 300, opacity: 1 }}
-                                        exit={{ width: 0, opacity: 0 }}
-                                        transition={{ duration: 0.3, type: "spring", stiffness: 100 }}
-                                        className="overflow-hidden mr-2"
-                                    >
-                                        <input
-                                            type="text"
-                                            placeholder="Search our harvest..."
-                                            value={searchQuery}
-                                            onChange={handleSearchChange}
-                                            className="w-full bg-white border-b-2 border-emerald-800 px-4 py-2 text-sm focus:outline-none placeholder:text-stone-400 placeholder:italic bg-transparent"
-                                            autoFocus
-                                        />
-                                    </motion.div>
-                                )}
-                            </AnimatePresence>
-                            <button
-                                onClick={() => setIsSearchOpen(!isSearchOpen)}
-                                className="text-gray-600 hover:text-emerald-800 transition-colors z-10 p-2"
-                            >
-                                {isSearchOpen ? <X size={20} /> : <Search size={20} />}
-                            </button>
+                    {/* Icons and Actions */}
+                    <div className="flex items-center space-x-4 sm:space-x-6">
+                        {/* Search (Desktop) */}
+                        <div className="hidden lg:flex items-center">
+                            <div className="relative flex items-center">
+                                <AnimatePresence>
+                                    {isSearchOpen && (
+                                        <motion.div
+                                            initial={{ width: 0, opacity: 0 }}
+                                            animate={{ width: 300, opacity: 1 }}
+                                            exit={{ width: 0, opacity: 0 }}
+                                            transition={{ duration: 0.3, type: "spring", stiffness: 100 }}
+                                            className="overflow-hidden mr-2"
+                                        >
+                                            <input
+                                                type="text"
+                                                placeholder="Search our harvest..."
+                                                value={searchQuery}
+                                                onChange={handleSearchChange}
+                                                className="w-full bg-white border-b-2 border-emerald-800 px-4 py-2 text-sm focus:outline-none placeholder:text-stone-400 placeholder:italic bg-transparent"
+                                                autoFocus
+                                            />
+                                        </motion.div>
+                                    )}
+                                </AnimatePresence>
+                                <button
+                                    onClick={() => {
+                                        setIsSearchOpen(!isSearchOpen);
+                                        if (isUserMenuOpen) setIsUserMenuOpen(false);
+                                    }}
+                                    className="text-gray-600 hover:text-emerald-800 transition-colors z-10 p-2"
+                                >
+                                    {isSearchOpen ? <X size={20} /> : <Search size={20} />}
+                                </button>
+                            </div>
                         </div>
 
-                        <Link to="/cart" className="text-gray-600 hover:text-emerald-800 transition-transform hover:scale-110 relative">
+                        {/* Cart (Desktop & Mobile) */}
+                        <Link to="/cart" className="text-gray-600 hover:text-emerald-800 transition-transform hover:scale-110 relative p-2">
                             <ShoppingBag size={20} />
                             {cartCount > 0 && (
-                                <span className="absolute -top-2 -right-2 bg-emerald-800 text-white text-[10px] font-bold w-4 h-4 rounded-full flex items-center justify-center">
+                                <span className="absolute top-1 right-1 bg-emerald-800 text-white text-[10px] font-bold w-4 h-4 rounded-full flex items-center justify-center">
                                     {cartCount}
                                 </span>
                             )}
                         </Link>
 
-                        {user ? (
-                            <div className="relative">
-                                <button
-                                    onClick={() => setIsUserMenuOpen(!isUserMenuOpen)}
-                                    className="flex items-center space-x-2 text-gray-600 hover:text-emerald-800 transition-colors"
-                                >
-                                    <div className="w-8 h-8 rounded-full bg-emerald-100 flex items-center justify-center text-emerald-800">
-                                        <User size={18} />
-                                    </div>
-                                    <span className="text-sm font-medium">{user.name.split(' ')[0]}</span>
-                                </button>
+                        {/* User Menu (Desktop) */}
+                        <div className="hidden lg:flex items-center">
+                            {user ? (
+                                <div className="relative">
+                                    <button
+                                        onClick={() => {
+                                            setIsUserMenuOpen(!isUserMenuOpen);
+                                            if (isSearchOpen) setIsSearchOpen(false);
+                                        }}
+                                        className="flex items-center space-x-2 text-gray-600 hover:text-emerald-800 transition-colors"
+                                    >
+                                        <div className="w-8 h-8 rounded-full bg-emerald-100 flex items-center justify-center text-emerald-800">
+                                            <User size={18} />
+                                        </div>
+                                        <span className="text-sm font-medium">{user.name.split(' ')[0]}</span>
+                                    </button>
 
-                                <AnimatePresence>
-                                    {isUserMenuOpen && (
-                                        <motion.div
-                                            initial={{ opacity: 0, y: 10 }}
-                                            animate={{ opacity: 1, y: 0 }}
-                                            exit={{ opacity: 0, y: 10 }}
-                                            className="absolute right-0 mt-2 w-48 bg-white border border-stone-100 shadow-xl rounded-sm py-2 z-50"
-                                        >
-                                            <div className="px-4 py-2 border-b border-stone-50 mb-1 text-xs text-stone-400 uppercase tracking-widest font-bold">Account</div>
-                                            <Link to="/profile" className="block px-4 py-2 text-sm text-stone-700 hover:bg-emerald-50" onClick={() => setIsUserMenuOpen(false)}>My Profile</Link>
-                                            <Link to="/orders" className="block px-4 py-2 text-sm text-stone-700 hover:bg-emerald-50" onClick={() => setIsUserMenuOpen(false)}>Orders</Link>
-                                            <button
-                                                onClick={() => {
-                                                    logout();
-                                                    setIsUserMenuOpen(false);
-                                                }}
-                                                className="w-full text-left px-4 py-2 text-sm text-red-600 hover:bg-red-50 flex items-center gap-2"
+                                    <AnimatePresence>
+                                        {isUserMenuOpen && (
+                                            <motion.div
+                                                initial={{ opacity: 0, y: 10 }}
+                                                animate={{ opacity: 1, y: 0 }}
+                                                exit={{ opacity: 0, y: 10 }}
+                                                className="absolute right-0 mt-2 w-48 bg-white border border-stone-100 shadow-xl rounded-sm py-2 z-50"
                                             >
-                                                <LogOut size={14} /> Logout
-                                            </button>
-                                        </motion.div>
-                                    )}
-                                </AnimatePresence>
-                            </div>
-                        ) : (
-                            <Link to="/login" className="text-gray-600 hover:text-emerald-800 transition-colors">
-                                <User size={20} />
-                            </Link>
-                        )}
+                                                <div className="px-4 py-2 border-b border-stone-50 mb-1 text-xs text-stone-400 uppercase tracking-widest font-bold">Account</div>
+                                                <Link to="/profile" className="block px-4 py-2 text-sm text-stone-700 hover:bg-emerald-50" onClick={() => setIsUserMenuOpen(false)}>My Profile</Link>
+                                                <Link to="/orders" className="block px-4 py-2 text-sm text-stone-700 hover:bg-emerald-50" onClick={() => setIsUserMenuOpen(false)}>Orders</Link>
+                                                <button
+                                                    onClick={() => {
+                                                        logout();
+                                                        setIsUserMenuOpen(false);
+                                                    }}
+                                                    className="w-full text-left px-4 py-2 text-sm text-red-600 hover:bg-red-50 flex items-center gap-2"
+                                                >
+                                                    <LogOut size={14} /> Logout
+                                                </button>
+                                            </motion.div>
+                                        )}
+                                    </AnimatePresence>
+                                </div>
+                            ) : (
+                                <Link to="/login" className="text-gray-600 hover:text-emerald-800 transition-colors p-2">
+                                    <User size={20} />
+                                </Link>
+                            )}
+                        </div>
+
+                        {/* Mobile Menu Button */}
+                        <div className="lg:hidden flex items-center">
+                            <button
+                                onClick={() => setIsOpen(!isOpen)}
+                                className="text-gray-900 hover:text-emerald-800 focus:outline-none p-2"
+                            >
+                                {isOpen ? <X size={24} /> : <Menu size={24} />}
+                            </button>
+                        </div>
                     </div>
 
-                    {/* Mobile menu button */}
-                    <div className="lg:hidden flex items-center">
-                        <button
-                            onClick={() => setIsOpen(!isOpen)}
-                            className="text-gray-900 hover:text-emerald-800 focus:outline-none"
-                        >
-                            {isOpen ? <X size={24} /> : <Menu size={24} />}
-                        </button>
-                    </div>
                 </div>
             </div>
 
