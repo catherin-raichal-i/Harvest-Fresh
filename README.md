@@ -1,16 +1,79 @@
-# React + Vite
+# 🌱 Harvest Fresh – E-commerce Web Application
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Harvest Fresh is a modern and responsive e-commerce web application designed for fresh fruits, vegetables, and organic products. The platform provides a smooth and engaging shopping experience with clean UI components, responsive layouts, and interactive product sections.
 
-Currently, two official plugins are available:
+🔗 **Live Demo:** https://harvest-fresh-ecommerce.vercel.app/  
+🔗 **GitHub Repository:** https://github.com/catherin-raichal-i/Harvest-Fresh
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## React Compiler
+## 🚀 Features
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- 🛒 Modern e-commerce user interface
+- 🥗 Fresh fruits & vegetables product showcase
+- 📱 Fully responsive design for all devices
+- ⚡ Fast and smooth user experience
+- 🎨 Attractive landing page and product sections
+- 🔍 Easy product browsing experience
+- 🧾 Shopping cart interface
+- 🌐 Deployed using Vercel
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 🛠️ Tech Stack
+
+### Frontend
+- HTML5
+- CSS3
+- JavaScript (ES6+)
+- React.js
+- Tailwind CSS
+
+### Deployment
+- Vercel
+
+---
+
+## 📸 Preview
+
+<img width="100%" alt="Harvest Fresh Preview" src="https://harvest-fresh-ecommerce.vercel.app/og-image.png" />
+
+---
+
+## 📂 Installation & Setup
+
+```bash
+# Clone the repository
+git clone https://github.com/catherin-raichal-i/Harvest-Fresh.git
+
+# Navigate into the project directory
+cd Harvest-Fresh
+
+# Install dependencies
+npm install
+
+# Start development server
+npm run dev
+```
+
+---
+
+## 📌 Future Improvements
+
+- User Authentication
+- Product Search & Filters
+- Wishlist Functionality
+- Payment Gateway Integration
+- Order Tracking System
+
+---
+
+## 👨‍💻 Author
+
+Developed with ❤️ by Catherin Raichal I
+
+---
+
+## ⭐ Support
+
+If you like this project, give it a ⭐ on GitHub!
