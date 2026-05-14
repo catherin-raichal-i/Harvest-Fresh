@@ -18,7 +18,7 @@ Harvest Fresh is a modern and responsive e-commerce web application designed for
 - 🧾 Shopping cart interface
 - 🌐 Deployed using Vercel
 
----
+
 
 ## 🛠️ Tech Stack
 
@@ -32,13 +32,13 @@ Harvest Fresh is a modern and responsive e-commerce web application designed for
 ### Deployment
 - Vercel
 
----
+
 
 ## 📸 Preview
 
 <img width="100%" alt="Harvest Fresh Preview" src="https://harvest-fresh-ecommerce.vercel.app/og-image.png" />
 
----
+
 
 ## 📂 Installation & Setup
 
@@ -56,7 +56,7 @@ npm install
 npm run dev
 ```
 
----
+
 
 ## 📌 Future Improvements
 
@@ -66,13 +66,13 @@ npm run dev
 - Payment Gateway Integration
 - Order Tracking System
 
----
+
 
 ## 👨‍💻 Author
 
 Developed with ❤️ by Catherin Raichal I
 
----
+
 
 ## ⭐ Support
 
