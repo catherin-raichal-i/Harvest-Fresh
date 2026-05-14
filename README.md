@@ -5,7 +5,7 @@ Harvest Fresh is a modern and responsive e-commerce web application designed for
 🔗 **Live Demo:** https://harvest-fresh-ecommerce.vercel.app/  
 🔗 **GitHub Repository:** https://github.com/catherin-raichal-i/Harvest-Fresh
 
----
+
 
 ## 🚀 Features
 
