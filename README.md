@@ -89,7 +89,7 @@ Harvest-Fresh/
 
 
 
-## 👨‍💻 Author
+## 👩‍💻 Author
 
 Developed with ❤️ by Catherin Raichal I
 
